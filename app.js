@@ -2,11 +2,11 @@
   const htmlElement = document.getElementById('container');
 
 
-  fetch(`http://api.yummly.com/v1/api/recipes?_app_id=db56cf30&_app_key=b32e160b791f2d418eac389c01d9e2dd&allowedIngredient[]=beef&allowedCuisine[]=cuisine^cuisine-france`)
+  fetch(`https://api.yummly.com/v1/api/recipes?_app_id=db56cf30&_app_key=b32e160b791f2d418eac389c01d9e2dd&allowedIngredient[]=beef&allowedCuisine[]=cuisine^cuisine-france`)
   .then(response => response.json())
   .then((json) => {
     let recipes = json.matches.map((recipe) => {
-      return fetch(`http://api.yummly.com/v1/api/recipe/${recipe.id}?_app_id=db56cf30&_app_key=b32e160b791f2d418eac389c01d9e2dd`)
+      return fetch(`https://api.yummly.com/v1/api/recipe/${recipe.id}?_app_id=db56cf30&_app_key=b32e160b791f2d418eac389c01d9e2dd`)
         .then(response => response.json())
     });
 
